@@ -10,7 +10,14 @@ const db = require('./db')
 const sessionStore = new SequelizeStore({db})
 const PORT = process.env.PORT || 8080
 const app = express()
-const socketio = require('socket.io')
+const socketio = require('socket.io')(app, {
+  path: '/',
+  serveClient: false,
+  // below are engine.IO options
+  pingInterval: 10000,
+  pingTimeout: 5000,
+  cookie: false
+});
 module.exports = app
 
 /**
