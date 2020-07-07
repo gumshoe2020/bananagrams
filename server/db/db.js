@@ -1,7 +1,6 @@
 const Sequelize = require('sequelize')
-const db = new Sequelize(
-  process.env.DATABASE_URL || 'postgres://localhost:5432/bananagrams', {
-    logging: false
+const db = new Sequelize('bananagrams', 'bngrams', process.env.DBPW, {
+    dialect: 'postgres'
   }
 )
 module.exports = db
