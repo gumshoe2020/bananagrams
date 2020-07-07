@@ -52,11 +52,11 @@ const createApp = () => {
   app.use(passport.session())
 
   // Grabs session id
-  app.use('/sessions', async (req, res, next) => {
+  app.use('/sessions', (req, res, next) => {
     if (!req.session.cookie.id) {
       req.session.cookie.id = req.sessionID
     }
-    const cookie = await req.session.cookie.id
+    const cookie = req.session.cookie.id
     res.json(cookie)
   })
 
