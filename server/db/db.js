@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize')
-const db = new Sequelize('bananagrams', 'postgres', process.env.DBPW, {
+const db = new Sequelize('postgres', 'postgres', process.env.DBPW, {
     dialect: 'postgres'
   }
 )
