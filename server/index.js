@@ -9,8 +9,9 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store)
 const db = require('./db')
 const sessionStore = new SequelizeStore({db})
 const PORT = process.env.PORT || 8080
-const app = express()
-const socketio = require('socket.io')(app, {
+const app = express();
+const server = require('http').createServer();
+const socketio = require('socket.io')(server, {
   path: '/',
   serveClient: false,
   // below are engine.IO options
