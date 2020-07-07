@@ -1,6 +1,5 @@
 const Sequelize = require('sequelize')
-console.info('dbpw: %s', 'UwdM71TnCQVP8nPO9')
-const db = new Sequelize('postgres', 'postgres', process.env.DBPW, {
+const db = new Sequelize('postgres', 'postgres', 'UwdM71TnCQVP8nPO9', {
     dialect: 'postgres'
   }
 )
